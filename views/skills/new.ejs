@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Document</title>
+  <title>New Skills</title>
 </head>
 <body>
-  <a href="/">Home</a>
-  <h3><%= skills.language %></h3>
-  <h3>Complete: <%= skills.learned ? 'Yes' : 'No' %></h3>
+  <form action="/skills" method="POST">
+    <input type="text" name="language">
+    <button type="submit">Save skill</button>
+  </form>
 </body>
 </html>
