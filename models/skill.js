@@ -13,24 +13,25 @@ module.exports = {
   deleteOne
 }
 
-function create(todo) {
-  // Add the id
-  skills.id = Date.now() % 10000;
-  skills.learned = false;
-  skills.push(todo);
-}
-
 function update(id, updatedSkills) {
   id = parseInt(id);
-  const todo = skills.find(skills => skills.id === id);
+  const skills = skills.find(skill => skill.id === id);
   Object.assign(skills, updatedSkills);
 }
+
+function create(skill) {
+  // Add the id
+  skill.id = Date.now() % 10000;
+  skill.learned = false;
+  skills.push(skill);
+}
+
 
 function deleteOne(id) {
   id = parseInt(id);
   // Find the index for the todo
   const idx = skills.findIndex(skills => skills.id === id);
-  todos.splice(idx, 1);
+  skills.splice(idx, 1);
 }
 
 function getAll(){
